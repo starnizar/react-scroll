@@ -1,6 +1,24 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   display: flex;
   flex-direction: column;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+}
+
+.nav-item {
+  transition: .25s;
+}
+
+.nav-item:hover {
+  background-color: rgb(212, 212, 255);
 }
 
 a {
@@ -31,4 +49,16 @@ a {
 
 .blue {
   background-color: #8484ff;
+}
+
+#yellow {
+  background-color: #ffff8f;
+}
+
+#grey {
+  background-color: #c5c5c5;
+}
+
+#pink {
+  background-color: #ffd3da;
 }

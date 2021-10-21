@@ -1,21 +1,27 @@
+import { Switch, Route, Link, BrowserRouter } from 'react-router-dom';
 import './App.css';
+import FirstPage from './components/FirstPage';
+import SecondPage from './components/SeconfPage';
 
 function App() {
   return (
-    <div className="App">
-      <div id='red' className='red'>
-          <a href='#blue'>To blue</a>
-          <a href='#green'>To green</a>
+    <BrowserRouter>
+
+      <div className='navigation'>
+        <Link className='nav-item' to='/'>Frist page</Link>
+        <Link className='nav-item' to='/second'>Second page</Link>
+        <Link className='nav-item' to='/second/#pink'>Second page-pink</Link>
       </div>
-      <div id='blue' className='blue'>
-          <a href='#red'>To red</a>
-          <a href='#green'>To green</a>
-      </div>
-      <div id='green' className='green'>
-        <a href='#red'>To red</a>
-          <a href='#blue'>To blue</a>
-      </div>
-    </div>
+
+      <Switch>
+        <Route exact path='/'>
+          <FirstPage />
+        </Route>
+        <Route path='/second'>
+          <SecondPage />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   );
 }
 
