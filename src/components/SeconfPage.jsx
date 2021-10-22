@@ -13,7 +13,7 @@ const SecondPage = () => {
 
     useEffect(() => {
         if(location.location.hash === '#pink') {
-            scrollHandler(pinkRef)
+            window.scrollTo(0, pinkRef.current.offsetTop)
         }
         if(location.location.hash === '#yellow') {
             scrollHandler(yellowRef)
@@ -21,12 +21,18 @@ const SecondPage = () => {
         if (location.location.hash === '') {
             scrollHandler(greyRef)
         }
-        console.log(location.location.hash);
     }, [location.location.hash])
+
+
+    const scroll = () => {
+        // console.log(pinkRef);
+        window.scrollTo(0, pinkRef.current.offsetTop)
+    }
 
     return (
         <>
         <div ref={greyRef} id='grey' className='red'>
+            <button onClick={scroll}>SCROLL</button>
             <a href='#pink'>To pink</a>
             <a href='#yellow'>To yellow</a>
         </div>
